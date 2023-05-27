@@ -1,0 +1,14 @@
+
+#!name=小黄书
+#!desc=
+#!homepage=
+#!author=
+#!icon=
+
+[Script]
+
+http-request ^http[s]?:\/\/(xag\.iouixp|psx\.zlslpx|axb\.pioxksa)\.com\/api\/app\/vid\/h5\/m3u8\/.*.m3u8\?token\=.*$ script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/xhs.js, requires-body=false, timeout=10, tag=xhs
+
+[MITM]
+
+hostname = *.zlslpx.*,*.pioxksa.*,*.iouixp.*
