@@ -4,9 +4,7 @@
 #!homepage=
 #!author=
 #!icon=
-
-[Rewrite]
-
+#!url=https://raw.githubusercontent.com/conghua11/loon/main/shzb.plugin
 ^http[s]?:\/\/gitee\.com\/ReactJSTeams\/next.js\/raw\/master\/examples\/nested-components\/.gitignore reject-200
 
 [Script]
