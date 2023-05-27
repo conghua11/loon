@@ -1,0 +1,20 @@
+
+#!name=神户直播
+#!desc=
+#!homepage=
+#!author=
+#!icon=
+
+[Rewrite]
+
+^http[s]?:\/\/gitee\.com\/ReactJSTeams\/next.js\/raw\/master\/examples\/nested-components\/.gitignore reject-200
+
+[Script]
+
+#神户直播
+http-response ^http[s]?:\/\/.*\.liuniukeji\.(heshuangde|cdwksjx)\.com\/index\.php\/App\/(Account\/Login|User\/Info|Index\/Update|Host\/Info).*$ script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/shzb.js, requires-body=true, timeout=10, tag=shzb
+http-request ^http[s]?:\/\/.*\.liuniukeji\.(heshuangde|cdwksjx)\.com\/index\.php\/App\/User\/Info.*$ script-path=https://raw.githubusercontent.com/WeiRen0/Scripts/main/shtk.js, requires-body=false, timeout=10, tag=shtk
+
+[MITM]
+
+hostname = *cdwksjx*,*heshuangde*,gitee.com
