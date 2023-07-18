@@ -11,9 +11,9 @@
 [Script]
 
 #神户直播
-http-response ^http[s]?:\/\/.*\.liuniukeji\.(heshuangde|cdwksjx)\.com\/index\.php\/App\/(Account\/Login|User\/Info|Index\/Update|Host\/Info).*$ script-path=https://raw.githubusercontent.com/conghua11/script/main/shzb.js, requires-body=true, timeout=60 ,tag=神户直播1
+http-response ^http[s]?:\/\/.*\.liuniukeji\.(heshuangde|cdwksjx)\.com\/index\.php\/App\/(Account\/Login|User\/Info|Index\/Update|Host\/Info).*$ script-path=https://raw.githubusercontent.com/conghua11/scripts/main/shzb.js, requires-body=true, timeout=60 ,tag=神户直播1
 
-http-request ^http[s]?:\/\/.*\.liuniukeji\.(heshuangde|cdwksjx)\.com\/index\.php\/App\/User\/Info.*$ script-path=https://raw.githubusercontent.com/conghua11/script/main/shtk.js, timeout=60 ,tag=神户直播2
+http-request ^http[s]?:\/\/.*\.liuniukeji\.(heshuangde|cdwksjx)\.com\/index\.php\/App\/User\/Info.*$ script-path=https://raw.githubusercontent.com/conghua11/scripts/main/shtk.js, timeout=60 ,tag=神户直播2
 [MITM]
 
 hostname = *cdwksjx*,*heshuangde*,gitee.com
