@@ -1,43 +1,25 @@
-/****************************
-// Quantumult-X
-[rewrite_local]
 
-^.*?kuwo\.cn/music\.pay\?newver=3$ ^POST url-and-header request-body (?<=&ids\=)\d+ request-body 4974150
-
-^(?!.*img).*?(kuwo\.cn|lrts\.me)(/vip|/openapi)?(/enc|/v[1,2]/(user(/vip\?_t|base)|theme|sysinfo|api(?!/search)|album)|/kuwopay/vip-tab/setting|tab|/a.p$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) url script-response-body https://napi.ltd/script/KuWo/KuWo.js
-
-[mitm]
-
-hostname = *.kuwo.cn, audiobookpay.lrts.me
-****************************/
 
 /****************************
-// Stash
-name: 酷我音乐
-desc: 酷我音乐全功能解锁脚本
-http:
-  mitm:
-    - '*.kuwo.cn, *.lrts.me'
-  script:
-    - match: ^(?!.*img).*?(kuwo\.cn|lrts\.me)(/vip|/openapi)?(/enc|/v[1,2]/(user(/vip\?_t|base)|theme|sysinfo|api(?!/search)|album)|/kuwopay/vip-tab/setting|tab|/a.p$|/music.pay\?newver=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice))
-      name: KuWo
-      type: response
-      require-body: true
-      timeout: 30
-script-providers:
-  KuWo:
-    url: https://napi.ltd/script/KuWo/KuWo.js
-    interval: 86400
-****************************/
 
-/****************************
-// Loon
-#!name = 酷我音乐
+#!name = 酷我音乐SVIP7
 #!desc = 酷我音乐全功能解锁脚本
-#!author = 影子
+脚本作者：影子
+获取脚本：https://raw.githubusercontent.com/conghua11/loon/main/kuwo.plugin
+[rewrite_local]
+# 酷我音乐_AdBlock
+^https?:\/\/rich\.kuwo\.cn\/AdService\/kaiping\/.+ url reject
+# 酷我音乐_AdBlock
+^https?:\/\/.+\.kwcdn\.kuwo\.cn\/star\/upload\/.+ url reject
+# 酷我音乐_AdBlock
+^https?:\/\/mobilead\.kuwo\.cn\/EcomResourceServer\/Ad url reject
+# 酷我听书_Blockad
+https?:\/\/audiobookpay\.kuwo\.cn/a\.p\?op=get_advertright url reject-dict
+# 酷我听书_Blockad
+https?:\/\/omp-audiobookpay\.lrts\.me\/a\.p\?op=get_advertright url reject-dict
 
 [Script]
-# http-response ^(?!.*img).*?(kuwo\.cn|lrts\.me)(/vip|/openapi)?(/enc|/v[1,2]/(user(/vip\?_t|base)|theme|sysinfo|api(?!/search)|album)|/kuwopay/vip-tab/setting|tab|/a.p$|/music.pay\?newver=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) script-path=https://napi.ltd/script/KuWo/KuWo.js, requires-body=true, timeout=60, tag=酷我音乐
+# http-response ^(?!.*img).*?(kuwo\.cn|lrts\.me)(/vip|/openapi)?(/enc|/v[1,2]/(user(/vip\?_t|base)|theme|sysinfo|api(?!/search)|album)|/kuwopay/vip-tab/setting|tab|/a.p$|/music.pay\?newver=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) script-path=https://raw.githubusercontent.com/conghua11/loon/main/kuwo.plugin, requires-body=true, timeout=60, tag=酷我音乐
 
 [MITM]
 hostname = *.kuwo.cn, audiobookpay.lrts.me
