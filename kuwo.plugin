@@ -9,7 +9,7 @@
 
 
 [Script]
-# http-response ^(?!.*img).*?(kuwo\.cn|lrts\.me)(/vip|/openapi)?(/enc|/v[1,2]/(user(/vip\?_t|base)|theme|sysinfo|api(?!/search)|album)|/kuwopay/vip-tab/setting|tab|/a.p$|/music.pay\?newver=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) script-path=https://raw.githubusercontent.com/conghua11/loon/main/kuwo.plugin, requires-body=true, timeout=60, tag=酷我音乐
+http-response ^(?!.*img).*?(kuwo\.cn|lrts\.me)(/vip|/openapi)?(/enc|/v[1,2]/(user(/vip\?_t|base)|theme|sysinfo|api(?!/search)|album)|/kuwopay/vip-tab/setting|tab|/a.p$|/music.pay\?newver=3$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) script-path=https://raw.githubusercontent.com/conghua11/loon/main/kuwo.plugin, requires-body=true, timeout=60, tag=酷我音乐
 
 [MITM]
 hostname = *.kuwo.cn, audiobookpay.lrts.me
