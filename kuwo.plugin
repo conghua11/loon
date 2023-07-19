@@ -20,9 +20,9 @@ https?:\/\/omp-audiobookpay\.lrts\.me\/a\.p\?op=get_advertright - reject-dict
 [Script]
 
 # 酷我音乐_会员
-http-request ^.*?kuwo\.cn/music\.pay\?newver=3$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, timeout=60 ,tag=replaceBody_15, argument="(?<=&ids\=)\d+->4974150"
+http-request ^.*?kuwo\.cn/music\.pay\?newver=3$ script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, timeout=60 ,tag=酷我音乐1, argument="(?<=&ids\=)\d+->4974150"
 
-http-response ^(?!.*img).*?(kuwo\.cn|lrts\.me)(/vip|/openapi)?(/enc|/v[1,2]/(user(/vip\?_t|base)|theme|sysinfo|api(?!/search)|album)|/kuwopay/vip-tab/setting|tab|/a.p$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) script-path=https://raw.githubusercontent.com/conghua11/loon/main/kuwo.plugin, requires-body=true, timeout=60 ,tag=酷我音乐
+http-response ^(?!.*img).*?(kuwo\.cn|lrts\.me)(/vip|/openapi)?(/enc|/v[1,2]/(user(/vip\?_t|base)|theme|sysinfo|api(?!/search)|album)|/kuwopay/vip-tab/setting|tab|/a.p$|/(EcomResource|(Mobile)?Ad)Serv(er|ice)) script-path=https://raw.githubusercontent.com/conghua11/loon/main/kuwo.plugin, requires-body=true, timeout=60 ,tag=酷我音乐2
 
 [MITM]
 
