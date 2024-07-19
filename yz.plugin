@@ -1,0 +1,20 @@
+/****************************
+
+#!name = 影子授权
+#!desc = 
+#!author = 小白
+#!date = 2024-07-19
+
+[Script]
+http-response https://auth.yingzi.ltd/auth.php?udid=\.*? requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/conghua11/loon/main/yz.plugin, tag=影子授权
+
+[Mitm]
+hostname = auth.yingzi.ltd
+****************************/
+
+console.log('开始运行!!!')
+var body = JSON.parse($response.body)
+body.success = true
+body.msg = "2099-12-01 00:00:00"
+$.log('修改成功,到期时间:', body.msg)
+$done({body: JSON.stringify(body)})
